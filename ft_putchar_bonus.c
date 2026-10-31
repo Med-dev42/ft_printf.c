@@ -30,16 +30,6 @@ int	ft_prnt(char c, int n)
 	return (count);
 }
 
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 int	ft_putchar_bonus(char c, t_flags f)
 {
 	int	count;

@@ -3,7 +3,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar crs
 
-HEADERS = ft_printf.h ft_printf_bonus.h
+HEADERS = ft_printf.h 
+BONUS_HEADERS = ft_printf_bonus.h
 SRC = ft_printf.c ft_print_char.c ft_print_str.c ft_print_point.c \
 		ft_putnbrs.c ft_unsigned_nbr.c ft_print_sign.c \
 		ft_puthexa.c
@@ -18,7 +19,7 @@ all: $(NAME)
 $(NAME): .mandatory
 
 .mandatory: $(OBJ)
-	rm -f $(NAME) .bonus
+	rm -f $(NAME) .bonus 
 	$(AR) $(NAME) $(OBJ)
 	@touch .mandatory
 
@@ -29,7 +30,10 @@ bonus: .bonus
 	$(AR) $(NAME) $(BONUS_OBJ)
 	@touch .bonus
 
-%.o: %.c $(HEADERS)
+$(OBJ): %.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BONUS_OBJ): %.o: %.c $(BONUS_HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

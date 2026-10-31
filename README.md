@@ -1,5 +1,4 @@
-*This project has been created as part
-of the 42 curriculum by mlazar.*
+*This project has been created as part of the 42 curriculum by mlazar.*
 
 # ft_printf
 
@@ -76,15 +75,17 @@ avoids passing many separate parameters.
 
 ## Resources
 
-- `man 3 printf`, `man 3 stdarg`
-- Documentation on variadic functions in C
-- YouTube: "Portfolio Courses" with "Oceano"
-- 
+- `man 3 printf`, `man 3 stdarg`.
+- Documentation on variadic functions in C.
+- YouTube: `Portfolio Courses` with `Oceano`, for understand what a variadic function is.
+- web: `reddit` and `GeeksforGeeks`, to understand how variadiv arguments are stored in the memory.
+- for test my code: write int main and use printftester for test my code.
+
 
 ### AI usage
 
 AI was used for the following tasks:
-- Explaining how variadic functions and `va_list`, `va_start`, `va_end`, `va_copy`  work.
+- Explaining how variadic functions and `va_list`, `va_start`, `va_end`,  work.
 - Reviewing my code for bugs, Norm issues and header problems (bonus part).
 - Fixing the Makefile relink behavior.
 - hard test cases for my ftprintf.

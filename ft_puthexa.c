@@ -6,11 +6,11 @@
 /*   By: mlazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 17:43:51 by mlazar            #+#    #+#             */
-/*   Updated: 2026/10/29 17:52:41 by mlazar           ###   ########.fr       */
+/*   Updated: 2026/10/30 16:32:16 by mlazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 static int	ft_put_hex(unsigned int hex, char c)
 {
@@ -23,7 +23,7 @@ static int	ft_put_hex(unsigned int hex, char c)
 	count = 0;
 	if (hex >= 16)
 		count += ft_put_hex(hex / 16, c);
-	count += ft_putchar(base[hex % 16]);
+	count += ft_print_char(base[hex % 16]);
 	return (count);
 }
 

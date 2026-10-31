@@ -6,7 +6,7 @@
 /*   By: mlazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 15:49:34 by mlazar            #+#    #+#             */
-/*   Updated: 2026/10/29 17:55:04 by mlazar           ###   ########.fr       */
+/*   Updated: 2026/10/31 01:31:25 by mlazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,23 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		count;
+	int		i;
 
 	va_start(args, format);
 	count = 0;
-	while (*format != '\0')
+	i = 0;
+	while (format[i])
 	{
-		if (*format == '%')
+		if (format[i] == '%')
 		{
-			if (*(format + 1) == '\0')
-			{
-				va_end(args);
-				return (-1);
-			}
-			format++;
-			count += ft_check(*format, &args);
+			i++;
+			if (!format[i])
+				break ;
+			count += ft_check(format[i], &args);
 		}
 		else
-			count += ft_print_char(*format);
-		format++;
+			count += ft_print_char(format[i]);
+		i++;
 	}
 	va_end(args);
 	return (count);

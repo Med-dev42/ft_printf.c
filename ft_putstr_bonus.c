@@ -27,6 +27,16 @@ static int	ft_putnstr(char *s, int n)
 	return (count);
 }
 
+int	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 int	ft_putstr_bonus(char *s, t_flags f)
 {
 	int	count;
